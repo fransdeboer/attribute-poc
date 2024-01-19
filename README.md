@@ -10,6 +10,6 @@ run `npm ci`
 
 run `npm start`
 
-open a web browser at localhost:8000
+open a web browser at http://localhost:8000/
 
 

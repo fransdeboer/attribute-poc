@@ -12,17 +12,23 @@ export class MyCheckbox extends ScopedElementsMixin(LitElement) {
   @state()
   isChecked = false;
 
+  disabled = false;
+
   override render(): string | TemplateResult {
 
     return html`
       <div>
-        <input type="checkbox" ?checked=${this.isChecked}>Check me
+        <input type="checkbox" ?checked=${this.isChecked} @input=${this.checkboxClicked} ?disabled=${this.disabled}>Check me
       </div>
 
       <div>
         <button @click=${this.onCheckTheBoxClicked}>Check the box</button>
       </div>
       `;
+  }
+
+  checkboxClicked() {
+    console.log('checkbox clicked');
   }
 
   onCheckTheBoxClicked() {
